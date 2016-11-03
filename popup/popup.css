@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+
+button {
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #333;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    width: 100%;
+}
+
+button:disabled {
+    color: #aaa!important;
+    background-image: linear-gradient(#fcfcfc, #eee)!important;
+}
+
+button:first-of-type {
+    margin-bottom: 1px;
+}
+
+button#success:hover, 
+.success button#success {
+    background-image: linear-gradient(#91dd70, #55ae2e);
+    color: #fff;
+}
+
+button#failure:hover, 
+.failure button#failure {
+    background-image: linear-gradient(#ec5757, #c71616);
+    color: #fff;
+}
