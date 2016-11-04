@@ -1,6 +1,6 @@
 window.Extension = (() => {
     const DEFAULTS = {
-        rootUrl: "https://api.github.com/",
+        rootUrl: "https://github.agodadev.io/api/v3/",
         oauthToken: "",
         context: "Code Review"
     };
@@ -39,6 +39,7 @@ window.Extension = (() => {
                     let [fullUrl, org, repo, pull] = params;
                     let xhr = new XMLHttpRequest();
                     xhr.open('GET', `${Settings.get('rootUrl')}repos/${org}/${repo}/pulls/${pull}/commits`);
+                    xhr.setRequestHeader('Authorization', `token ${Settings.get('oauthToken')}`);
                     xhr.onload = () => {
                         let result = JSON.parse(xhr.responseText);
                         let sha = result[result.length - 1].sha;
