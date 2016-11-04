@@ -36,7 +36,6 @@ class PopupController {
     _onValidCommitParams(params) {
         this._enableComponents();
         this._params = params;
-        console.log(params);
     }
 }
 

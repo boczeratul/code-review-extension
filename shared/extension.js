@@ -38,7 +38,7 @@ window.Extension = (() => {
                     
                     let [fullUrl, org, repo, pull] = params;
                     let xhr = new XMLHttpRequest();
-                    xhr.open('GET', `${Settings.get('rootUrl')}repos/${org}/${repo}/pulls/${pull}/commits`);
+                    xhr.open('GET', `${Settings.get('rootUrl')}repos/${org}/${repo}/pulls/${pull}/commits?per_page=100`);
                     xhr.setRequestHeader('Authorization', `token ${Settings.get('oauthToken')}`);
                     xhr.onload = () => {
                         let result = JSON.parse(xhr.responseText);
